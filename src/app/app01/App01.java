@@ -11,6 +11,7 @@ public class App01 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number :");
         num = scanner.nextLine().trim();
+        scanner.close();
         try {
 
             Integer.parseInt(num);
