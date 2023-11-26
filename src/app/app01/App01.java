@@ -7,11 +7,19 @@ public class App01 {
 
 
     public static void main(String[] args) {
+        getData();
+        handleData();
+    }
 
+    static void getData() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number :");
         num = scanner.nextLine().trim();
         scanner.close();
+
+    }
+
+    static void handleData() {
         try {
 
             Integer.parseInt(num);
@@ -21,5 +29,7 @@ public class App01 {
             System.out.println("Not a number!");
         }
 
+
     }
 }
+

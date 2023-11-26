@@ -21,14 +21,18 @@ public class App03 {
         purchase = scanner.nextDouble();
         scanner.close();
         cardBalance = 777.43;
-        validate(cardBalance);
+       try{
+           validateBalance(cardBalance);
+       }catch (InsufficientBalance ib){
+           System.out.println(ib.getMessage());
+       }
     }
 
 
-    public static void validate(double cardBalance) {
+    public static void validateBalance(double cardBalance) throws InsufficientBalance{
 
         if (purchase > cardBalance) {
-            throw new ArithmeticException("Not enough money");
+            throw new InsufficientBalance("Not enough money.");
 
         } else {
             totalAmount = cardBalance - purchase;
